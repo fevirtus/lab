@@ -3,13 +3,11 @@ Description=My Go Application
 After=network.target
 
 [Service]
-ExecStart=/usr/local/bin/myapp
+ExecStart=/root/lab/sv-bad-gateway
 Restart=always
 RestartSec=5
-User=yourusername
-Group=yourgroupname
-Environment=PATH=/usr/bin:/usr/local/bin
-Environment=GODEBUG=gctrace=1
+User=root
+Group=root
 
 [Install]
 WantedBy=multi-user.target
