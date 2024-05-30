@@ -1,0 +1,15 @@
+[Unit]
+Description=My Go Application
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/myapp
+Restart=always
+RestartSec=5
+User=yourusername
+Group=yourgroupname
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=GODEBUG=gctrace=1
+
+[Install]
+WantedBy=multi-user.target
