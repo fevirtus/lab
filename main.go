@@ -28,7 +28,7 @@ func main() {
 	}()
 
 	go func() {
-		err := http.ListenAndServe(":443", nil)
+		err := http.ListenAndServeTLS(":443", "cert.pem", "key.pem", nil)
 		if err != nil {
 			log.Fatalf("HTTPS server on port 443 failed: %s", err)
 		}
