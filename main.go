@@ -21,9 +21,16 @@ func main() {
 	http.HandleFunc("/", handler)
 
 	go func() {
-		err := http.ListenAndServe(":8888", nil)
+		err := http.ListenAndServe(":80", nil)
 		if err != nil {
 			log.Fatalf("HTTP server on port 80 failed: %s", err)
+		}
+	}()
+
+	go func() {
+		err := http.ListenAndServe(":443", nil)
+		if err != nil {
+			log.Fatalf("HTTPS server on port 443 failed: %s", err)
 		}
 	}()
 
